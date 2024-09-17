@@ -15,6 +15,6 @@ public class ScoreCounter : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        uiText.text = score.ToString("#,0");
+        uiText.text = "Your Score: " + score.ToString("#,0");
     }
 }

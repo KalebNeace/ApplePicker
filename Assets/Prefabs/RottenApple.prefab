@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2272813076064295579}
   m_Layer: 0
   m_Name: RottenApple
-  m_TagString: Untagged
+  m_TagString: RotApple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
