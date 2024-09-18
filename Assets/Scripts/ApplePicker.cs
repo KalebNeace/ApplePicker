@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class ApplePicker : MonoBehaviour
 {
     [Header("Inscribed")]
@@ -10,6 +11,8 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
+    public int numRound = 1;
+    public Text roundText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class ApplePicker : MonoBehaviour
             tBasketGO.transform.position = pos;
             basketList.Add(tBasketGO);
         }
+        roundText.text = "Round: " + numRound;
     }
     public void AppleMissed(){
         GameObject[] appleArray=GameObject.FindGameObjectsWithTag("Apple");
@@ -32,6 +36,8 @@ public class ApplePicker : MonoBehaviour
     GameObject basketGo = basketList[basketIndex];
     basketList.RemoveAt(basketIndex);
     Destroy(basketGo);
+    numRound++;
+    roundText.text = "Round: " + numRound; 
 
      if (basketList.Count == 0 ){
          SceneManager.LoadScene("GameOver");
